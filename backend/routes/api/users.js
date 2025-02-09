@@ -37,7 +37,7 @@ router.post(
         const { email, password, username, firstName, lastName } = req.body;
         const profilePicUrl = req.file ?
             await singleFileUpload({ file: req.file, public: true }) :
-            null;
+            'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
         const hashedPassword = bcrypt.hashSync(password);
         const user = await User.create({ email, username, hashedPassword, firstName, lastName, profilePicUrl });
 
