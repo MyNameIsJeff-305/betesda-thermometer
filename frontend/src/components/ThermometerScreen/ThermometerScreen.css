@@ -1,0 +1,12 @@
+.thermometer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.thermometer__percent-current {
+    font-size: 2rem;
+    font-weight: bold;
+}
