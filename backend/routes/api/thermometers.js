@@ -68,5 +68,16 @@ router.delete('/:id', requireAuth, async (req, res) => {
     res.json({ message: 'Thermometer deleted' });
 });
 
+//Get the most recent Thermometer
+router.get('/recent', async (req, res) => {
+    const thermometers = await Thermometer.findAll();
+
+    if (!thermometers) {
+        return res.status(404).json({ message: 'Thermometers not found' });
+    }
+
+    res.json(thermometers[thermometers.length - 1]);
+});
+
 
 module.exports = router;
