@@ -13,21 +13,21 @@ module.exports = {
       {
         value: 35480,
         max: 2000000,
-        steps: 200,
+        steps: 10,
         format: "$",
         userId: 1
       },
       {
         value: 45600,
         max: 2000000,
-        steps: 200,
+        steps: 10,
         format: "$",
         userId: 2
       },
       {
         value: 676543,
         max: 2000000,
-        steps: 200,
+        steps: 10,
         format: "$",
         userId: 3
       }
