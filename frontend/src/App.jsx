@@ -4,6 +4,7 @@ import './index.css'
 
 import ThermometerScreen from "./components/ThermometerScreen";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Navigation/Footer";
 
 function Layout() {
   return (
@@ -15,7 +16,7 @@ function Layout() {
         <Outlet />
       </main>
       <footer className="footer">
-          <p>© 2025 Betesda Church. Powered by <a href="https://mynameisjeffportfolio.netlify.app/">Michel Garcia Ribalta</a></p>
+          <Footer />
       </footer>
     </div>
   )
