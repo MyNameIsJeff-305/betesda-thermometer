@@ -1,0 +1,13 @@
+.icon-theme-switch {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon-theme-switch:hover {
+    color: #007bff;
+}

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa;
+    background-color: var(--background-color-2);
     padding: 10px;
     text-align: center;
     bottom: 0;

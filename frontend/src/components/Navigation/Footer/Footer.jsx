@@ -4,6 +4,7 @@ import { BiWorld } from "react-icons/bi";
 const currentYear = new Date().getFullYear();
 
 import './Footer.css'
+import IconThemeSwitch from "../IconThemeSwitch/IconThemeSwitch";
 
 const Footer = () => {
     return (
@@ -14,6 +15,7 @@ const Footer = () => {
             <div className="footer-links">
                 <a href="https://github.com/MyNameIsJeff-305"><FaGithub /></a>
                 <a href="https://mynameisjeffportfolio.netlify.app/"><BiWorld /></a>
+                <IconThemeSwitch />
             </div>
         </footer>
     );
