@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './CustomThermometer.css';
 
-class CurrencyThermometer extends Component {
+class CustomThermometer extends Component {
     render() {
         this.options = this._generateOptions();
         const theme = `thermometer--theme-${this.options.theme()}`;
@@ -38,8 +38,8 @@ class CurrencyThermometer extends Component {
             steps: this.props.steps,
             currency: this.props.currency || 'USD',
             size: () => (['small', 'normal', 'large'].includes(this.props.size) ? this.props.size : 'normal'),
-            height: this.props.height || 200,
-            percent: () => (this.options.value / this.options.max) * 100,
+            height: this.props.height+50 || 200,
+            percent: () => ((this.options.value / this.options.max) * 100) + 5,
             intervals: []
         };
     }
@@ -53,9 +53,9 @@ class CurrencyThermometer extends Component {
 
     _createIntervals() {
         if (this.options.steps) {
-            for (let step = 0; step <= this.options.steps; step++) {
+            for (let step = 1; step <= this.options.steps; step += 3) {
                 let val = ((this.options.max / this.options.steps) * step).toFixed(2);
-                let percent = (val / this.options.max) * 100;
+                let percent = ((val / this.options.max) * 100) + 5;
                 let interval = { percent: percent, label: this._formatCurrency(val) };
                 this.options.intervals.push(interval);
             }
@@ -64,11 +64,22 @@ class CurrencyThermometer extends Component {
 
     _createIntervalsUI(intervals) {
         return intervals.map((step, i) => (
-            <li key={i} style={{ bottom: `calc(${step.percent}% - 1px)` }}>
-                {step.label}
+            <li key={i} style={{ bottom: `calc(${step.percent}% - 1px)`, height: '9px' }}>
+                {i % 2 === 0 ? (
+                    <>
+                        <span className="scale-line left"></span>
+                        <span className="label left">{step.label}</span>
+                    </>
+                ) : (
+                    <>
+                        <span className="label right">{step.label}</span>
+                        <span className="scale-line right"></span>
+                    </>
+                )}
             </li>
         ));
     }
+
 }
 
-export default CurrencyThermometer;
+export default CustomThermometer;

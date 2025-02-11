@@ -43,7 +43,7 @@ const ThermometerScreen = () => {
                 <CustomThermometer
                     theme={theme}
                     value={thermometer?.value}
-                    steps={10}
+                    steps={30}
                     max={2200000}
                     size="large"
                     height={500}
@@ -53,7 +53,7 @@ const ThermometerScreen = () => {
                 <CustomThermometer
                     theme={theme}
                     value={thermometer?.value}
-                    steps={10}
+                    steps={30}
                     max={2200000}
                     size="large"
                     height={400}

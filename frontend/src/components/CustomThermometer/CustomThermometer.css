@@ -1,3 +1,11 @@
+.thermometer {
+    width: 120px;
+    /* increased to give space for scale lines */
+    position: relative;
+    padding: 0 20px;
+    /* add padding to make space for scale lines */
+}
+
 .thermometer .thermometer__mercury {
     transition: all .5s ease-in-out;
 }
@@ -20,6 +28,7 @@
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
+    z-index: 1000;
 }
 
 .thermometer ul.thermometer__statistics {
@@ -121,7 +130,7 @@
 }
 
 .thermometer--large .thermometer__draw-b:before {
-    width: 30px;
+    width: 0px;
 }
 
 .thermometer--large .thermometer__draw-b:after {
@@ -149,11 +158,11 @@
 }
 
 .thermometer--theme-light ul.thermometer__statistics li {
-    color: #000;
+    color: #414141;
 }
 
 .thermometer--theme-light ul.thermometer__statistics li:before {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent);
+    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent); */
 }
 
 .thermometer--theme-light .thermometer__percent-current {
@@ -184,8 +193,8 @@
 }
 
 .thermometer--theme-dark ul.thermometer__statistics li:before {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent);
-    
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent); */
+
 }
 
 .thermometer--theme-dark .thermometer__percent-current {
@@ -376,4 +385,63 @@
     height: 20px;
     background-color: #f44336;
     border-radius: 50px 50px 0 0;
+}
+
+.thermometer ul.thermometer__statistics li .scale-line {
+    position: absolute;
+    top: 100%;
+    left: 50px;
+
+    width: 10px;
+    /* or however wide you want the lines to be */
+    height: 1px;
+    /* or however thick you want the lines to be */
+    background-color: currentColor;
+    /* uses the color of the li element */
+    /* transform: translateY(-50%); */
+    /* centers the line vertically */
+}
+
+.thermometer ul.thermometer__statistics li .scale-line.left {
+    left: -30px;
+    /* adjust this value based on desired spacing */
+}
+
+.thermometer ul.thermometer__statistics li .scale-line.right {
+    right: -15px;
+    /* adjust this value based on desired spacing */
+}
+
+.thermometer ul.thermometer__statistics li .label {
+    position: absolute;
+    white-space: nowrap;
+}
+
+.thermometer ul.thermometer__statistics li .label.left {
+    right: 100%;
+    /* Pushes the label to the left side */
+    margin-right: 30px;
+    /* Provides a small space between the scale line and label */
+}
+
+.thermometer ul.thermometer__statistics li .label.right {
+    left: 60%;
+    /* Pushes the label to the right side */
+    /* margin-left: 100px; */
+    /* Provides a small space between the scale line and label */
+}
+
+.thermometer ul.thermometer__statistics li .scale-line {
+    width: 10px;
+    position: absolute;
+}
+
+.thermometer ul.thermometer__statistics li .scale-line.left {
+    left: -20px;
+    /* Position left scale line */
+}
+
+.thermometer ul.thermometer__statistics li .scale-line.right {
+    right: -20px;
+    /* Position right scale line */
 }
