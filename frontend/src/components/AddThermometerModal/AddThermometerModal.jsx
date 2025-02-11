@@ -20,6 +20,9 @@ function AddThermometerModal({ user, setThermometerChecker }) {
         if (value < 0) {
             newErrors.value = "Value must be greater than 0";
         }
+        if (value > 2200000) {
+            newErrors.value = "Value must be less than 2,200,000";
+        }
         setErrors(newErrors);
         setIsButtonDisabled(!!newErrors.value);
     }, [value]);
