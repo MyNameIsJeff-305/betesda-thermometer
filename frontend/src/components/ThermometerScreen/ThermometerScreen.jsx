@@ -74,12 +74,12 @@ const ThermometerScreen = () => {
                                 modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
                             />
                         </button>
-                        <button className='add-thermometer-button-mobile'>
+                        <div className='add-thermometer-button-mobile'>
                             <OpenModalMenuItem
-                                itemText="+"
+                                itemText="Add a Thermometer"
                                 modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
                             />
-                        </button>
+                        </div>
                     </div>
                     
                 )
