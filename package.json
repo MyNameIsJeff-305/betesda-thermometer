@@ -1,8 +1,9 @@
 {
   "name": "betesda-termomether",
   "version": "1.0.0",
-  "description": "## Database Schema Design",
+  "description": "El termometro",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
     "install": "npm --prefix backend install backend",
     "dev:backend": "npm install --prefix backend start",

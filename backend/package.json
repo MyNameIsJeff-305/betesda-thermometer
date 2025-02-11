@@ -6,6 +6,7 @@
     "cors": "^2.8.5",
     "csurf": "^1.10.0",
     "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
     "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.2.1",
@@ -19,7 +20,6 @@
     "sequelize-cli": "^6.6.2"
   },
   "devDependencies": {
-    "dotenv-cli": "^8.0.0",
     "nodemon": "^3.1.9",
     "sqlite3": "^5.1.7"
   },
@@ -33,7 +33,7 @@
     "michael": "npm run migrate && npm run seed && dotenv npm start --production",
     "magic": "npm run migrate && npm run seed",
     "start:development": "nodemon ./bin/www",
-    "start:production": "node -r dotenv/config ./bin/www",
-    "build": "node -r dotenv/config psql-setup-script.js"
+    "start:production": "dotenv node ./bin/www",
+    "build": "dotenv node psql-setup-script.js"
   }
 }
