@@ -34,6 +34,6 @@
     "magic": "npm run migrate && npm run seed",
     "start:development": "nodemon ./bin/www",
     "start:production": "dotenv node ./bin/www",
-    "build": "dotenv node psql-setup-script.js"
+    "build": "node -r dotenv/config psql-setup-script.js"
   }
 }
