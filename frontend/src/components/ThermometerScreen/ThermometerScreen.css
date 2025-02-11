@@ -5,14 +5,19 @@
     justify-content: center;
 }
 
-.thermometer-labels {
+.thermometer-labels-regular {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.thermometer-max, .thermometer-min {
+.thermometer-labels-mobile {
+    display: none;
+}
+
+.thermometer-max,
+.thermometer-min {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 5px;
@@ -71,4 +76,51 @@
 
 .add-thermometer-button:hover {
     background-color: #0056b3;
+}
+
+.add-thermometer-button-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .thermometer-labels-regular {
+        display: none;
+    }
+
+    .thermometer-labels-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .add-thermometer-button {
+        display: none;
+    }
+
+    .add-thermometer-button-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        /* /* bottom: 20px; */
+        top: 15%;
+        left: 5%;
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        color: white;
+        font-size: 24px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .add-thermometer-button-mobile:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+    }
 }

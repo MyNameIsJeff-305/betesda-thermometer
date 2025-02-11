@@ -65,7 +65,7 @@ function AddThermometerModal({ user, setThermometerChecker }) {
                         />
                         {errors.value && <p className="error-message">{errors.value}</p>}
                     </label>
-                    <button type="submit" className="add-thermometer-button" disabled={isButtonDisabled}>
+                    <button type="submit" className="add-thermometer-button-form" disabled={isButtonDisabled}>
                         Add Thermometer
                     </button>
                 </div>

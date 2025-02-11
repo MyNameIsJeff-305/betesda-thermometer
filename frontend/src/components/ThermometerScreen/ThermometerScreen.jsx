@@ -39,7 +39,17 @@ const ThermometerScreen = () => {
 
     return (
         <div className='thermometer-container'>
-            <div className="thermometer-labels">
+            <div className="thermometer-labels-regular">
+                <CustomThermometer
+                    theme={theme}
+                    value={thermometer?.value}
+                    steps={10}
+                    max={2200000}
+                    size="large"
+                    height={500}
+                />
+            </div>
+            <div className="thermometer-labels-mobile">
                 <CustomThermometer
                     theme={theme}
                     value={thermometer?.value}
@@ -64,7 +74,14 @@ const ThermometerScreen = () => {
                                 modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
                             />
                         </button>
+                        <button className='add-thermometer-button-mobile'>
+                            <OpenModalMenuItem
+                                itemText="+"
+                                modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
+                            />
+                        </button>
                     </div>
+                    
                 )
             }
         </div>

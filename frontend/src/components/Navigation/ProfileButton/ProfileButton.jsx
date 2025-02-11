@@ -4,6 +4,8 @@ import * as sessionActions from '../../../store/session';
 import OpenModalMenuItem from '../OpenModalMenuItem';
 import LoginFormModal from '../LoginFormModal';
 
+import { MdLogout } from "react-icons/md";
+
 import './ProfileButton.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -41,9 +43,14 @@ function ProfileButton({ user }) {
         <div className='profile-button-container'>
             {user ? (
                 <>
-                    <p>Hello, {user.firstName}</p>
-                    <div>
-                        <button className='logout-button' onClick={logout}>Logout</button>
+                    <div className='regular-profile'>
+                        <p>Hello, {user.firstName}</p>
+                        <div>
+                            <button className='logout-button' onClick={logout}>Logout</button>
+                        </div>
+                    </div>
+                    <div className='mobile-profile'>
+                        <div className='logout-button' onClick={logout}><MdLogout /></div>
                     </div>
                 </>
             ) : (

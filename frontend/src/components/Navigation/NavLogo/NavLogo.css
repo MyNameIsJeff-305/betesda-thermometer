@@ -34,3 +34,11 @@ h1 {
     color: var(--header-text-color);
     transition: color 0.3s ease;
 }
+
+/* Hide the h1 for Mobile */
+@media (max-width: 600px) {
+    h1 {
+        display: none;
+    }
+    
+}
