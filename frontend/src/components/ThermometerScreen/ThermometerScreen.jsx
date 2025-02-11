@@ -56,7 +56,7 @@ const ThermometerScreen = () => {
                     steps={10}
                     max={2200000}
                     size="large"
-                    height={500}
+                    height={400}
                 />
             </div>
             <div className='additional-info'>
