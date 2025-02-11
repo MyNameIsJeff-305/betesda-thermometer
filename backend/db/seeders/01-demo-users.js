@@ -1,6 +1,8 @@
 const { User } = require('../models');
 const bcrypt = require("bcryptjs");
 
+const defaultUser = process.env.DEFAULT_USER;
+
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
@@ -57,6 +59,14 @@ module.exports = {
         hashedPassword: bcrypt.hashSync("password"),
         profilePicUrl: "https://cdn.vox-cdn.com/thumbor/yIoKynT0Jl-zE7yWwzmW2fy04xc=/0x0:706x644/1400x1400/filters:focal(353x322:354x323)/cdn.vox-cdn.com/uploads/chorus_asset/file/13874040/stevejobs.1419962539.png"
       },
+      {
+        username: "pastorfrank",
+        firstName: "Frank",
+        lastName: "Rodriguez",
+        email: "pastorfrank1973@hotmail.com",
+        hashedPassword: bcrypt.hashSync("PastorFrank.2025!"),
+        profilePicUrl: "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg"
+      }
     ], options);
   },
 

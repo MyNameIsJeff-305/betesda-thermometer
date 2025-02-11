@@ -1,0 +1,36 @@
+/* NavLogo Styles */
+
+/* Container for the logo */
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Logo image */
+.logo-main {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;  /* Add a subtle transition effect */
+}
+
+.nav-logo-container img {
+    width: 50px;
+}
+
+.nav-logo-container:hover .logo-main {
+    transform: scale(1.1);  /* Slightly enlarge the logo on hover */
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--header-text-color);
+    transition: color 0.3s ease;
+}
