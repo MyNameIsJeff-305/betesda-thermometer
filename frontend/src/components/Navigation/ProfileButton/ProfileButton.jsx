@@ -43,17 +43,17 @@ function ProfileButton({ user }) {
                 <>
                     <p>Hello, {user.firstName}</p>
                     <div>
-                        <button onClick={logout}>Logout</button>
+                        <button className='logout-button' onClick={logout}>Logout</button>
                     </div>
                 </>
             ) : (
-                <>
+                <button className='login-button'>
                     <OpenModalMenuItem
                         itemText="Log In"
                         onItemClick={closeMenu}
                         modalComponent={<LoginFormModal />}
                     />
-                </>
+                </button>
             )}
         </div>
     );

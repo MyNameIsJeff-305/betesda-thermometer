@@ -46,12 +46,6 @@ function LoginFormModal() {
       })
   };
 
-  const demoSubmit = (e) => {
-    e.preventDefault();
-    return dispatch(login({ credential: 'demo@aa.io', password: 'password' }))
-      .then(closeModal);
-  }
-
   return (
     <div className='login-container'>
       <form onSubmit={handleSubmit} className='login-form'>
