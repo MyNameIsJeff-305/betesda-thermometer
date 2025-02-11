@@ -33,7 +33,7 @@
     "michael": "npm run migrate && npm run seed && dotenv npm start --production",
     "magic": "npm run migrate && npm run seed",
     "start:development": "nodemon ./bin/www",
-    "start:production": "dotenv node ./bin/www",
+    "start:production": "node -r dotenv/config ./bin/www",
     "build": "node -r dotenv/config psql-setup-script.js"
   }
 }
