@@ -6,16 +6,20 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import CustomThermometer from '../CustomThermometer/CustomThermometer';
 import { MdRefresh } from "react-icons/md";
+import * as sessionActions from '../../store/session';
 import './ThermometerScreen.css';
 
 
 const ThermometerScreen = () => {
     const { theme } = useContext(ThemeContext);
     const dispatch = useDispatch();
+
     const thermometer = useSelector(state => state.thermometers.currentThermometer);
+    const user = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(getAllThermometersThunk());
+        dispatch(sessionActions.restoreUser());
     }, [dispatch]);
 
     const handleUpdateThermometer = () => {
@@ -44,6 +48,15 @@ const ThermometerScreen = () => {
                 </p>
                 <button className='update-button' onClick={handleUpdateThermometer}><MdRefresh /></button>
             </div>
+            {
+                user && (
+                    <div className='add-thermometer'>
+                        <button className='add-thermometer-button'>
+                            Add Thermometer
+                        </button>
+                    </div>
+                )
+            }
         </div>
     );
 };

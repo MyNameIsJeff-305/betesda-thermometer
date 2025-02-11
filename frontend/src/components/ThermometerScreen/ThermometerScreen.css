@@ -56,3 +56,19 @@
     color: #007bff;
     transform: rotate(360deg);
 }
+
+.add-thermometer-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-thermometer-button:hover {
+    background-color: #0056b3;
+}
