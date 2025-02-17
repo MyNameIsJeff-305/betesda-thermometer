@@ -5,7 +5,8 @@ function OpenModalMenuItem({
   modalComponent,
   itemText,
   onItemClick,
-  onModalClose
+  onModalClose,
+  style
 }) {
   const { setModalContent, setOnModalClose } = useModal();
 
@@ -16,7 +17,7 @@ function OpenModalMenuItem({
   };
 
   return (
-    <li className="open-modal-menu-item" onClick={onClick}>
+    <li className="open-modal-menu-item" onClick={onClick} style={{ style }}>
       {itemText}
     </li>
   );

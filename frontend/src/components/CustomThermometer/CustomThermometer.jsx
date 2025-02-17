@@ -34,12 +34,15 @@ class CustomThermometer extends Component {
         return {
             theme: () => (['light', 'dark'].includes(this.props.theme) ? this.props.theme : 'light'),
             value: this.props.value || 0,
-            max: this.props.max || 100,
+            max: this.props.max + 10000 || 100,
             steps: this.props.steps,
             currency: this.props.currency || 'USD',
             size: () => (['small', 'normal', 'large'].includes(this.props.size) ? this.props.size : 'normal'),
-            height: this.props.height+50 || 200,
-            percent: () => ((this.options.value / this.options.max) * 100) + 5,
+            height: this.props.height || 200,
+            percent: () => {
+                const basePercent = (this.options.value / this.options.max) * 100; // Original percentage calculation
+                return 10 + basePercent * 0.95; // Shift start to 5% and scale the rest to fit within 95%
+            },
             intervals: []
         };
     }
@@ -52,15 +55,20 @@ class CustomThermometer extends Component {
     }
 
     _createIntervals() {
-        if (this.options.steps) {
-            for (let step = 1; step <= this.options.steps; step += 3) {
-                let val = ((this.options.max / this.options.steps) * step).toFixed(2);
-                let percent = ((val / this.options.max) * 100) + 5;
-                let interval = { percent: percent, label: this._formatCurrency(val) };
-                this.options.intervals.push(interval);
-            }
+        const stepValue = 50000; // Increment value for each step
+        const max = 2200000; // Maximum value for the thermometer
+        const numSteps = max / stepValue; // Calculate the number of steps required
+        const offset = 10; // Start steps at 5% from the bottom
+
+        for (let step = 0; step <= numSteps; step++) {
+            let val = stepValue * step; // Calculate the current value based on step
+            let percent = (val / max) * 90 + offset; // Calculate the percentage position for the step, adding offset
+            let interval = { percent: percent, label: this._formatCurrency(val) };
+            this.options.intervals.push(interval);
         }
     }
+
+
 
     _createIntervalsUI(intervals) {
         return intervals.map((step, i) => (

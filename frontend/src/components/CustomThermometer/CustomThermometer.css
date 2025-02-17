@@ -231,7 +231,7 @@
     position: absolute;
     top: initial;
     right: initial;
-    bottom: initial;
+    bottom: calc(100% - var(--step-percent) - 1px); /* Use a CSS variable for percent */
     left: 0;
     list-style: none;
     font-size: medium;
@@ -304,6 +304,10 @@
     padding: 5px 10px;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 3px 3px 6px rgba(0, 0, 0, 0.1);
+    /* transition: opacity 0.3s ease-in-out; */
+    /* Smooth transition for opacity change */
+    /* background-color: var(--background-color); */
+    /* Ensure there is a background color for better visibility */
 }
 
 .thermometer .thermometer__percent-current:before,
@@ -420,7 +424,7 @@
 .thermometer ul.thermometer__statistics li .label.left {
     right: 100%;
     /* Pushes the label to the left side */
-    margin-right: 30px;
+    margin-right: 40px;
     /* Provides a small space between the scale line and label */
 }
 
@@ -437,7 +441,7 @@
 }
 
 .thermometer ul.thermometer__statistics li .scale-line.left {
-    left: -20px;
+    left: -30px;
     /* Position left scale line */
 }
 

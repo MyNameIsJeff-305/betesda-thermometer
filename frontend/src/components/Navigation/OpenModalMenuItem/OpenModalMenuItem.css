@@ -1,7 +1,7 @@
 .open-modal-menu-item {
     cursor: pointer;
     padding: 10px 10px;
-    color: var(--text-color);
+    /* color: var(--text-color); */
     /* background-color: var(--button-bg-color); */
     border-radius: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
