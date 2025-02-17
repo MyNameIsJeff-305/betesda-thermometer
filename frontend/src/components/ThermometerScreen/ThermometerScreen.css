@@ -8,7 +8,7 @@
 
 .thermometer-labels-regular {
     display: flex;
-    padding: 80px 140px;
+    padding: 80px 140px 40px 140px;
     /* border: 1px solid #6c757d65; */
     background-color: var(--background-color);
     border-radius: 200px;
@@ -94,7 +94,7 @@
 
     .thermometer-labels-mobile {
         display: flex;
-        padding: 80px 140px;
+        padding: 80px 140px 40px 140px;
         /* border: 1px solid #6c757d65; */
         background-color: var(--background-color);
         border-radius: 200px;
