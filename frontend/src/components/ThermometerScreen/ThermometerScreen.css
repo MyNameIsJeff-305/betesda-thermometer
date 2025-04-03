@@ -13,7 +13,7 @@
     background-color: var(--background-color);
     border-radius: 200px;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -87,6 +87,16 @@
     display: none;
 }
 
+.betesda-logo {
+    width: 200px;
+}
+
+.thermometer-labels-regular h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
     .thermometer-labels-regular {
         display: none;
@@ -99,12 +109,18 @@
         background-color: var(--background-color);
         border-radius: 200px;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
     }
 
     .add-thermometer-button {
         display: none;
+    }
+
+    .thermometer-labels-mobile h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     .add-thermometer-button-mobile {

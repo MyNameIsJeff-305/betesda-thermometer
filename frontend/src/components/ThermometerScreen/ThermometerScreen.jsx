@@ -40,6 +40,7 @@ const ThermometerScreen = () => {
     return (
         <div className='thermometer-container'>
             <div className="thermometer-labels-regular">
+                <h3>$2,200,000.00</h3>
                 <CustomThermometer
                     theme={theme}
                     value={thermometer?.value}
@@ -48,8 +49,10 @@ const ThermometerScreen = () => {
                     size="large"
                     height={600}
                 />
+                <img className='betesda-logo' src='/assets/logo-letters.webp' alt='Betesda Logo' />
             </div>
             <div className="thermometer-labels-mobile">
+                <h3>$2,200,000.00</h3>
                 <CustomThermometer
                     theme={theme}
                     value={thermometer?.value}
@@ -58,6 +61,7 @@ const ThermometerScreen = () => {
                     size="large"
                     height={600}
                 />
+                <img className='betesda-logo' src='/assets/logo-letters.webp' alt='Betesda Logo' />
             </div>
             <div className='additional-info'>
                 <p>
@@ -70,20 +74,20 @@ const ThermometerScreen = () => {
                     <div className='add-thermometer'>
                         <button className='add-thermometer-button'>
                             <OpenModalMenuItem
-                                style={{color: 'white'}}
+                                style={{ color: 'white' }}
                                 itemText="Add a Thermometer"
-                                modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
+                                modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker} />}
                             />
                         </button>
                         <div className='add-thermometer-button-mobile'>
                             <OpenModalMenuItem
-                                style={{color: 'white'}}
+                                style={{ color: 'white' }}
                                 itemText="Add a Thermometer"
-                                modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker}/>}
+                                modalComponent={<AddThermometerModal user={user?.id} setThermometerChecker={setThermometerChecker} />}
                             />
                         </div>
                     </div>
-                    
+
                 )
             }
         </div>
