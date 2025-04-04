@@ -47,7 +47,7 @@ const ThermometerScreen = () => {
                     steps={40}
                     max={2200000}
                     size="large"
-                    height={600}
+                    height={450}
                 />
                 <img className='betesda-logo' src='/assets/logo-letters.webp' alt='Betesda Logo' />
             </div>
@@ -59,7 +59,7 @@ const ThermometerScreen = () => {
                     steps={40}
                     max={2200000}
                     size="large"
-                    height={600}
+                    height={450}
                 />
                 <img className='betesda-logo' src='/assets/logo-letters.webp' alt='Betesda Logo' />
             </div>
